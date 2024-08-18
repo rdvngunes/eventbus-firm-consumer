@@ -1,0 +1,12 @@
+.dockerignore
+.git
+.gitignore
+.vs/
+.vscode/
+readme
+Articaft/
+src/Web/
+.sonarqube/
+**/bin/
+**/obj/
+tools/

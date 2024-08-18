@@ -1,0 +1,13 @@
+version: "3"
+services:
+    dotnet:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes:
+            - ./src/Hemlak.Firm.Consumer/appsettings.json:/publish/appsettings.json
+            - ./src/Hemlak.Firm.Consumer/appsettings.development.json:/publish/appsettings.development.json
+            - ./src/Hemlak.Firm.Consumer/appsettings.beta.json:/publish/appsettings.beta.json
+            - ./src/Hemlak.Firm.Consumer/appsettings.production.json:/publish/appsettings.production.json            
+        environment:
+            ASPNETCORE_ENVIRONMENT: "${ASPNETCORE_ENVIRONMENT-development}"

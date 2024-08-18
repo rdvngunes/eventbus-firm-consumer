@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build-env
+ENV ASPNETCORE_ENVIRONMENT=development
+
+WORKDIR /app
+
+# Copy everything else and build
+COPY ./ ./
+RUN dotnet restore
+RUN dotnet publish -c Release -o /publish
+
+ENTRYPOINT dotnet /publish/Hemlak.Firm.Consumer.dll --environment $ASPNETCORE_ENVIRONMENT
