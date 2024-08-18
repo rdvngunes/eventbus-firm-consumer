@@ -29,7 +29,7 @@ namespace Template.Firm.Consumer.Repositories
 
         public async Task<UpsertCrmFirmRequest> GetFirmAsync(int firmId)
         {
-            var query = $@"select  * feom testtable";
+            var query = $@"select  * from testtable";
 
             using (_sqlConnection = new SqlConnection(_templateDbOptions.Value.ConnectionString))
             {
