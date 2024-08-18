@@ -73,8 +73,6 @@ namespace Template.Firm.Consumer
         {
             services.AddOptions();
             services.Configure<EventBusConnectionConfig>(opt => Configuration.GetSection("EventBusConnectionConfig").Bind(opt));
-            services.Configure<RabbitMqSettings>(opt => Configuration.GetSection("RabbitMqSettings").Bind(opt));
-            services.Configure<RabbitMqConsumerSettings>(opt => Configuration.GetSection("RabbitMqSettings:RabbitMqConsumerSettings").Bind(opt));
             services.Configure<FirmServiceConfig>(opt => Configuration.GetSection("FirmServiceConfig").Bind(opt));
             services.Configure<TemplateDbConfig>(opt => Configuration.GetSection("TemplateDbConfig").Bind(opt));
         }
